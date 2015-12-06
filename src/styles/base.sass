@@ -1,0 +1,24 @@
+/**
+ * Import base styles **only**
+ */
+
+/* base styles */
+@import 'foundation/reset'
+@import 'foundation/print'
+@import 'helpers/vars'
+@import 'helpers/mixins'
+@import 'foundation/typography'
+
+*, *:before, *:after
+  box-sizing: inherit
+
+html
+  box-sizing: border-box
+
+body
+  @include font-size($font-size--base)
+  font-family: $font-family--primary
+
+::selection
+  background: $color--main
+  color: $color--white

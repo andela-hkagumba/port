@@ -1,0 +1,131 @@
+/**
+ * Media Queries
+ *
+ *      header
+ *          @include bp-small()
+ *              display: none
+ *         
+ *          @include bp-huge()
+ *              display: block
+ *         
+ *     
+ */
+
+@mixin bp-small
+  @media only screen and (min-width: 20em)
+    @content
+ 
+
+
+@mixin bp-medium
+  @media only screen and (min-width: 40em)
+    @content
+ 
+
+
+@mixin bp-large
+  @media only screen and (min-width: 60em)
+    @content
+ 
+
+
+@mixin bp-xl
+  @media only screen and (min-width: 80em)
+    @content
+ 
+
+
+/**
+ * Font size
+ *
+ *      p
+ *          @include font-size(16px)
+ *     
+ */
+
+@function calculateEm($size, $context: 16px)
+  @return ($size / $context) * 1em
+
+
+@mixin font-size($size)
+  font-size: $size
+  font-size: calculateEm($size)
+
+
+/**
+ * Expand element outside its container
+ *
+ *      img
+ *          @include expand-full-width(16px)
+ *     
+ *
+ */
+
+@mixin expand-full-width()
+  width: 100vw
+  margin-left: calc(-50vw + 50%)
+
+
+/**
+ * Vertical align
+ *
+ *      .logotype
+ *          @include vertical-align()
+ *     
+ *
+ *      .logotype--absolute
+ *          @include vertical-align(absolute)
+ *     
+ *
+ */
+
+@mixin vertical-align($position: relative)
+  position: $position
+  top: 50%
+  transform: translateY(-50%)
+
+
+/**
+ * Visually hide an element
+ *
+ *      p
+ *          @extend %visually-hidden
+ *     
+ *
+ */
+
+%visually-hidden,
+.visually-hidden
+  position: absolute !important
+  overflow: hidden
+  width: 1px
+  height: 1px
+  padding: 0
+  border: 0
+  clip: rect(1px, 1px, 1px, 1px)
+
+
+/**
+ * Clearfix
+ *
+ *      p
+ *          @extend %clearfix
+ *     
+ *
+ */
+
+%clearfix,
+.clearfix
+  *zoom: 1
+
+  &:before
+    content: ' '
+    display: table
+ 
+
+  &:after
+    content: ' '
+    display: table
+    clear: both
+ 
+
