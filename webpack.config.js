@@ -27,6 +27,10 @@ const config = {
       {
         test: /\.sass$/,
         loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
+      },
+      {
+        test: /\.json$/,
+        loaders: ['json-loader']
       }
     ]
   },
@@ -44,7 +48,7 @@ const config = {
     })
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx', '.sass'],
+    extensions: ['', '.js', '.jsx', '.sass', '.json'],
     modulesDirectories: ['src', 'node_modules']
   }
 }
