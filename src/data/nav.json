@@ -1,0 +1,22 @@
+[
+  {
+    "title" : "Home",
+    "icon": true,
+    "align": "left"
+  },
+  {
+    "title" : "About",
+    "icon": false,
+    "align": "center"
+  },
+  {
+    "title" : "Portfolio",
+    "icon": false,
+    "align": "center"
+  },
+  {
+    "title" : "Contact",
+    "icon": false,
+    "align": "right"
+  }
+]

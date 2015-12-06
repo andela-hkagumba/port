@@ -1,0 +1,28 @@
+{
+  "title": "Herbert Kagumba",
+  "tagline": "Develop & Design",
+  "description": "Develop & Design mobile, web and desktop applications. I breathe and so I code",
+  "keywords": "FullStack developer, Digital design, Front-end Developer, Back-end developer",
+  "url": "http://hs.kagumba.com",
+  "logo": "hs-logo.svg",
+  "author": {
+    "name": "Herbert Kagumba",
+    "email": "habu@kagumba.com",
+    "job": "Full-Stack Developer",
+    "po": "733-00515, Buruburu, Kenya",
+    "city": "Nairobi",
+    "pocode": "00515",
+    "country": "Kenya",
+    "tel": "+254727114286",
+    "twitter": "HabuKagumba",
+    "github": "Habu-Kagumba",
+    "fbk_id": "1374429249534174",
+    "google_plus": "herbertkagumba",
+    "disqus_shortname": "hsdevdesign",
+    "avatar": "me.svg"
+  },
+  "app": {
+    "fcbk_id": "1374429249534174",
+    "analytics": "UA-59013809-1"
+  }
+}
