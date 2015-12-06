@@ -4,10 +4,10 @@ import Navigation from 'js/modules/header/navigation/Navigation'
 class Header extends Component {
   render () {
     return (
-      <div>
+      <header>
         Header here
         <Navigation />
-      </div>
+      </header>
     )
   }
 }
