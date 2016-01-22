@@ -11,20 +11,20 @@ $color--main:                    #012530
 /* Base colors
  * -------------------- */
 
-$color--white:                   #ffffff;
-$color--black:                   #222222;
+$color--white:                   #ffffff
+$color--black:                   #333333
 
 /* Text colors
  * -------------------- */
 
-$color--text:                    #222222;
-$color--link:                    #e3e3e3;
+$color--text:                    #333333
+$color--link:                    #fe2f2b
 
 /* Button colors
  * -------------------- */
 
-$color--button:              #e3e3e3;
-$color--button-hover:        darken($color--button, 5%);
+$color--button:              #e3e3e3
+$color--button-hover:        darken($color--button, 5%)
 
 /**
  * Font sizes and spacing/widths
@@ -39,19 +39,27 @@ $font-family--primary:          'Lato', sans-serif
 /* Font sizes
  * -------------------- */
 
-$font-size--small:               14px;
-$font-size--base:                16px;
-$font-size--large:               24px;
-
-/* Spacings and widths
- * -------------------- */
-
-$width-site:                     1040px;
-$spacing--small:                 .5em;
-$spacing--medium:                1em;
-$spacing--large:                 1.5em;
+$font-size--small:               14px
+$font-size--base:                16px
+$font-size--large:               24px
 
 /* Transitions
  * -------------------- */
 
-$transition-time--base:         .5s;
+$transition-time--base:         .5s
+
+/** screen sizes
+ * -------------------- */
+$mobile: 480px
+$tablet: 768px
+$mid-desktop: 992px
+$desktop: 1200px
+
+$mobile-min: $mobile
+$tablet-min: $tablet
+$mid-desktop-min: $mid-desktop
+$desktop-min: $desktop
+
+$mobile-max: ($tablet-min - 1)
+$tablet-max: ($mid-desktop-min - 1)
+$mid-desktop-max: ($desktop-min - 1)
