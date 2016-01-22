@@ -1,0 +1,22 @@
+@import 'styles/helpers/hacks'
+
+/* Border overline from center */
+@mixin borderOverlineCenter($duration, $color)
+	@include hacks()
+	position: relative
+	overflow: hidden
+	&:before
+		content: ""
+		position: absolute
+		z-index: -1
+		left: 50%
+		right: 50%
+		top: 0
+		background: $color
+		height: 4px
+	&:hover,
+	&:focus,
+	&:active
+		&:before
+			left: 0
+			right: 0

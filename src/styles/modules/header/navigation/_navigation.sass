@@ -1,0 +1,38 @@
+@import 'styles/foundation/positioning'
+@import 'styles/helpers/vars'
+@import 'styles/helpers/mixins'
+@import 'styles/modules/header/navigation/mixins'
+@import 'styles/modules/header/navigation/animations'
+
+.header-nav
+  width: 100%
+  max-height: 130px
+  ul.navbar
+    margin: 0 auto
+    display: flex
+    padding: 0
+    li
+      list-style: none
+      margin: 0 10px
+      &.align-left
+        flex: 2 2 0
+        a
+          svg
+            max-width: 120px
+      &.align-center
+        flex: 0.5 0.5 0
+        @extend .text-center
+        a
+          display: block
+          padding: 10px 0
+          text-align: center
+          @include borderOverlineCenter($transition-time--base, $color--link)
+          &:before
+            @include transition(left $transition-time--base ease-out, right $transition-time--base ease-out)
+      a
+        text-decoration: none
+        font-weight: 400
+      @include media-query($mid-desktop-min)
+        &.align-left,
+        &.align-center,
+          flex: 1 1 0
