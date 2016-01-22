@@ -1,38 +1,14 @@
 /**
  * Media Queries
- *
- *      header
- *          @include bp-small()
- *              display: none
- *         
- *          @include bp-huge()
- *              display: block
- *         
- *     
  */
-
-@mixin bp-small
-  @media only screen and (min-width: 20em)
+@mixin media-query($width)
+  @media only screen and (max-width: $width)
     @content
- 
 
+@mixin media-query-full($min-width, $max-width)
+  @media only screen and (min-width: $min-width) and (max-width: $max-width)
+    @conten
 
-@mixin bp-medium
-  @media only screen and (min-width: 40em)
-    @content
- 
-
-
-@mixin bp-large
-  @media only screen and (min-width: 60em)
-    @content
- 
-
-
-@mixin bp-xl
-  @media only screen and (min-width: 80em)
-    @content
- 
 
 
 /**
@@ -40,7 +16,7 @@
  *
  *      p
  *          @include font-size(16px)
- *     
+ *
  */
 
 @function calculateEm($size, $context: 16px)
@@ -50,6 +26,21 @@
 @mixin font-size($size)
   font-size: $size
   font-size: calculateEm($size)
+  line-height: $size + 10
+  line-height: calculateEm($size + 10)
+
+@mixin text-outline($color)
+  -webkit-text-stroke: 1px $color
+  text-shadow: 1px 1px 0 $color, -1px -1px 0 $color, 1px -1px 0 $color, -1px  1px 0 $color, 1px  1px 0 $color
+
+/**
+ * div
+ *   @include box-sizing(border-box)
+ *
+ **/
+
+@mixin box-sizing($type)
+  box-sizing: $type
 
 
 /**
@@ -57,7 +48,7 @@
  *
  *      img
  *          @include expand-full-width(16px)
- *     
+ *
  *
  */
 
@@ -67,15 +58,71 @@
 
 
 /**
+ * Absolute positionining
+ *
+ *      .logotype
+ *          @include abs(10px, 10px, 5px, 15px)
+ *
+ **/
+@mixin abs ($top: auto, $right: auto, $bottom: auto, $left: auto)
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  position: absolute
+
+/**
+ * Centering
+ *
+ *      .logotype
+ *          @include center(true, false)
+ *
+ **/
+@mixin centerer($horizontal: true, $vertical: true)
+  position: absolute
+  @if ($horizontal and $vertical)
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  @else if ($horizontal)
+    left: 50%
+    transform: translate(-50%, 0)
+  @else if ($vertical)
+    top: 50%
+    transform: translate(0, -50%)
+
+/**
+ * Opacity
+ *
+ *      .logotype
+ *          @include opacity(0.5)
+ *
+ **/
+
+@mixin opacity($opacity)
+  opacity: $opacity
+  filter: alpha(opacity=($opacity * 100))
+
+/**
+ * pos
+ *
+ *      .logotype
+ *          @include pos(50px)
+ *
+ **/
+@mixin pos($x, $y)
+  transform: translate($x, $y)
+
+/**
  * Vertical align
  *
  *      .logotype
  *          @include vertical-align()
- *     
+ *
  *
  *      .logotype--absolute
  *          @include vertical-align(absolute)
- *     
+ *
  *
  */
 
@@ -84,13 +131,20 @@
   top: 50%
   transform: translateY(-50%)
 
+/**
+ * @include transition(all 0.6s ease)
+ *
+ */
+
+@mixin transition($args...)
+  transition: $args
 
 /**
  * Visually hide an element
  *
  *      p
  *          @extend %visually-hidden
- *     
+ *
  *
  */
 
@@ -110,7 +164,7 @@
  *
  *      p
  *          @extend %clearfix
- *     
+ *
  *
  */
 
@@ -121,11 +175,9 @@
   &:before
     content: ' '
     display: table
- 
+
 
   &:after
     content: ' '
     display: table
     clear: both
- 
-
