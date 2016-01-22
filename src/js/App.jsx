@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import MetaTags from 'js/modules/header/seo/Seo'
 import Header from 'js/modules/header/Header'
 import Footer from 'js/modules/footer/Footer'
+import Home from 'js/modules/home/HomePage'
 
 class App extends Component {
   componentWillMount () {
@@ -13,8 +14,9 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Header />
-        <Footer />
+        <Header/>
+          <Home/>
+        <Footer/>
       </div>
     )
   }
