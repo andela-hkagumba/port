@@ -2,15 +2,25 @@
 @import 'styles/helpers/mixins'
 
 .about
-  width: $desktop
+  width: 100%
+  max-width: $desktop
   margin: 0 auto
   height: 100vh
   background: transparentize($color--button, .7)
   display: flex
   align-items: center
+  padding: 30px
   .me-svg
-    svg
-      width: 400px
-      border-radius: 50%
+    flex: 0.5 0.5 0
+    span
+      display: flex
+      justify-content: center
+      margin: 0 auto
+      svg
+        width: 100%
+        max-width: 400px
+        border-radius: 50%
+        border: 1px solid $color--link
   .about-me
+    flex: 0.8 0.8 0
     padding: 10px
