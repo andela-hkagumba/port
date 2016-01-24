@@ -140,7 +140,7 @@ class HeroAnimation {
 
     _d.logos.map((logo) => {
       logo.attr({
-        transform: 'S0r360'
+        transform: 't0,0S0r360'
       })
     })
   }
@@ -181,7 +181,7 @@ class HeroAnimation {
         }, 300, mina.bounce, () => {
           _d.logos.map((logo) => {
             logo.animate({
-              transform: 'S1r0'
+              transform: 't0,0S1r0'
             }, 600, mina.bounce)
           })
         })
