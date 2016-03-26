@@ -15,11 +15,12 @@
     span
       overflow: hidden
       &:first-child
-        flex: 0.48 0.48 0
+        flex: 0.6 0.6 0
       &:nth-child(2)
         @include abs(0,0,0,0)
+        flex: 0 0 0
       &:last-child
-        flex: 0.29 0.29 0
+        flex: 0.4 0.4 0
         padding-top: 57px
         @include media-query($mid-desktop-min)
           padding-top: 40px
@@ -30,7 +31,7 @@
       svg
         width: 100%
     @include media-query($tablet-min)
-      width: 100%
+      width: 90%
   @include media-query($mid-desktop-min)
     height: 300px
   @include media-query($tablet-min)
